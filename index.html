@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Proyecto 2...</title>
+    <link rel="stylesheet" href="./Css/estilos1.css">   
+    <!-- JavaScript Bundle with Popper -->
+    <script type="text/javascript" src="./Js/funciones.js"></script>
+</head>
+<div style="display: none;" id="uno">
+  <nav  class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Proyecto 2 EDD</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" onclick="mostraruno()">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" onclick="mostrardos()" >Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" onclick="mostrartres()">Registro</a>
+          </li>
+        </ul>
+        <span class="navbar-text">
+          Bienvenido
+        </span>
+      </div>
+    </div>
+  </nav>
+ <body style="background-color: black;" >
+  <div class="titulo">
+  <br>
+  <br>
+  <div>
+    <h3>Readme...</h3>
+    <br>Proyecto 1  Estructura de Datos
+    <br>Vacaciones de Diciembre 2022
+    <br>Ingenieria en Ciencias y Sistemas
+    <br>Allan Ricardo Barillas Sosa - 201906572
+    <br>
+    <br>Practica de estructuras propiamente creadas
+    <br>Listas Simples
+    <br>Listas doblemente enlazadas
+    <br>Listas Circulares Simples
+    <br>Listas Circulares doblemente enlazadas
+    <br>Listas Ortogonales
+    <br>Arbol Binario
+    <br>
+    <br>Resumen enunciado: 
+    <br><tt>Reproductor de musica con inicio de secion y seccion Social con demas Usuarios</tt>
+    <br><tt>Creacion y modificacion de listas de musica segun seleccion, autor y genero</tt>
+  </div>
+  <p></p>
+  <p></p>
+  <br>
+  <BR></BR>
+  <br>
+  <br>
+  <br>
+</div>
+<br>
+ </body>
+</div>
+<div style="display: none;" id="dos" class="fondo">
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Proyecto 2 EDD</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link"  onclick="mostraruno()">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active"  aria-current="page" onclick="mostrardos()">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" onclick="mostrartres()">Registro</a>
+          </li>
+        </ul>
+        <span class="navbar-text">
+          Inicio de Sesion
+        </span>
+      </div>
+    </div>
+  </nav>
+<body> 
+  <br>
+  <br>
+  <div class="verticAl"> 
+    <center>
+      <div id="vistalog" class="card to" style="width: 30%;">
+        <center>
+          <img src="./Static/Img/us.png" alt="" width="45%" >
+        </center>
+          <br>
+          <center>
+            <input class="box" type="text" name="user" id="user" placeholder="USUARIO">
+            <p></p>
+            <input class="box" type="password"  name="pass" id="pass" placeholder="* * * * * * * * * * * * * * *">
+            <p></p>
+          </center>
+            <input type="checkbox" id="admon" name="admon" style="zoom: 1.5;">&nbsp; Administrador
+          <center>
+            <br>
+            <button class="boton" onclick="logeo()">Iniciar Sesion</button>
+          </center>
+          <p></p>
+          <a class="links" >Olvidé mi contraseña</a><br>
+          <a class="links" onclick="mostrartres()">Crear cuenta</a>
+          <br><br>
+      </div>
+    </div>
+  </center>
+</body>
+
+</div>
+<div style="display: none;" id="tres" class="fondo">
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Proyecto 2 EDD</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link"  onclick="mostraruno()">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  onclick="mostrardos()">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active"  aria-current="page" onclick="mostrartres()">Registro</a>
+          </li>
+        </ul>
+        <span class="navbar-text">
+          Registro de Usuario
+        </span>
+      </div>
+    </div>
+  </nav>
+  
+  
+  <body >    
+    <br>    
+      <center>
+        <div class="card siempre" style="width: 48rem; margin-top: 10%;">
+          <b>
+            <br>
+            <h2>Registro</h2>
+          </b>
+          <br>
+          <div >
+            <img src="./Static/Img/new.png" alt="" width="25%" style="float: left; margin-left: 8%;">
+            <table style="margin-right: 15%;">
+                <tr>
+                  <th style="background-color: rgba(66, 173, 168, 0);" class="yes">Usuario &nbsp; &nbsp;</th>
+                  <th> 
+                    <input type="text" class="cuadros" id="us">                    
+                  </th>
+                </tr>
+                <tr><th></th><th></th></tr>
+                <tr>
+                  <th style="background-color: rgba(178, 173, 173, 0);" class="yes">Nombre <br> Completo</th>
+                  <th>
+                    <input type="text" class="cuadros" id="name">                    
+                  </th>
+                </tr>
+                <tr><th></th><th></th></tr>
+                <tr>
+                  <th style="background-color: rgba(178, 173, 173, 0);" class="yes">DPI <br></th>
+                  <th>
+                    <input type="text" class="cuadros" id="dpy">                    
+                  </th>
+                </tr>
+                <tr><th></th><th></th></tr>
+                <tr >
+                  <th style="background-color: rgba(178, 173, 173, 0);" class="yes">Telefono <br> </th>
+                  <th>
+                    <input type="text" class="cuadros" id="fone">                    
+                  </th>
+                </tr>
+                <tr><th></th><th></th></tr>
+                <tr>
+                  <th style="background-color: rgba(178, 173, 173, 0);" class="yes">Contraseña</th>
+                  <th >
+                    <input type="password" class="cuadros" id="password" placeholder="* * * * * * * * * * * * * * *">                    
+                  </th>
+                </tr>
+                <tr>
+                  <th>
+                    <br>
+                    <center>
+                    </center>
+                  </th>
+                  <th>
+                    <br>
+                    <center>
+                      
+                      <button onclick="crearunUsuario()" class="btn ton" style="background-color: rgb(49, 121, 36);">Registrar</button>
+                 
+                      <button onclick="mostrardos()" class="btn ton" style="background-color: rgb(181, 20, 20); border: 25px;">Cancelar</button>
+                    </center>                  
+                  </th>
+                </tr>
+            </table>
+            <br>
+             
+          </div>
+        </div>
+      </center>
+</body>
+
+</div>
+<div  id="cuatro">
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Proyecto 2 EDD</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page"  onclick="mostrarcuatro()">Administración</a>
+          </li>
+          
+        </ul>
+        <span class="navbar-text">
+          Módulo Administración
+        </span>
+      </div>
+    </div>
+</nav>
+<body>
+    <br><br>
+    <div class="esquinaI">
+        <div >
+                <button onclick="mostraruno()" class="btn btn-danger logout" >Cerrar Sesión</button>
+        </div>
+    </div>
+    <br>
+    <p></p><br><br>
+    <center>
+        <div class="shadow-lg p-3 mb-5 bg-body rounded" style="width: 90rem;">
+            <div >
+                <table>
+                    <tr>
+                       <td>Carga Masiva</td>
+                       <td>Graficas</td>
+                       <td class="grafica"  rowspan="25">
+                           <div id="graficaAdmon"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Clientes</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>
+                                <div id="Lienzouno">
+
+                                      <input accept=".json" onchange="cargarClientes(this.files[0])" style="width: 399;" id="fus" name="fus" type="file" class="btn btn-primary btn-sm">
+                                      <button onclick="deselectFile()"  class="btn btn-success">cargar</button>
+
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <button style="width: 100px;" id="gus" onclick="grafica1()" name="gus" type="button" class="btn btn-secondary btn-sm">Grafo Clientes</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td  >Actores</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="lienzoart">
+
+                                    <input accept=".json" onchange="cargarActores(this.files[0])" style="width: 399;" id="far" name="far" type="file" class="btn btn-secondary btn-sm">
+                                    <button  onclick="deselectFile()" class="btn btn-success">cargar</button>
+
+                            </div>
+                        </td>
+                        <td>
+                            <button style="width: 100px;" id="gar" name="gar" type="button" onclick="grafica2()" class="btn btn-primary btn-sm">Grafo Actores</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td  >Peliculas</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="lienzocan">
+
+                                    <input accept=".json" onchange="cargarPeliculas(this.files[0])" style="width: 399;" id="fcan" name="fcan" type="file" class="btn btn-primary btn-sm">
+                                    <button  class="btn btn-success" onclick="deselectFile()">cargar</button>
+
+                            </div>
+                        </td>
+                        <td>
+                            <button style="width: 100px;" id="gcan" name="gcan" type="button" onclick="grafica2()" class="btn btn-secondary btn-sm">Grafo Peliculas</button>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Categorias</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="lienzomusic">
+
+                                    <input accept=".json" onchange="cargarCategorias(this.files[0])" style="width: 399; text-align: center;" id="fmp" name="fmp" type="file" class="btn btn-secondary btn-sm">
+                                    <button onclick="deselectFile()" class="btn btn-success">cargar</button>
+
+                            </div>
+                        </td>
+                        <td>
+                            <button style="width: 100px;" id="gmp" name="gmp" type="button" onclick="grafica3()" class="btn btn-primary btn-sm">Grafo Categorias</button>
+                            
+                        </td>
+                    </tr>
+                    
+                </table>
+            </div><br><br>
+        </div>
+    </center>
+    </body>
+</div>
+<div style="display: none;" id="vistaMusica">
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Proyecto 2 EDD</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page"  onclick="vistaMusica()">Musica</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page"  onclick="vistaPlaylist()">Playlist</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page"  onclick="vistaArtistas()">Artistas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page"  onclick="vistaAmigos()">Amigos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page"  onclick="vistaBloqueados()">Bloqueados</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page"  onclick="vistaPodcast()">Podcast</a>
+          </li>
+        </ul>
+        <span class="navbar-text">
+          Muster Cloud
+        </span>
+      </div>
+    </div>
+</nav>
+  <body>
+    <br><br>
+    <div class="esquinaI">
+        <div >
+                <button onclick="mostraruno()" class="btn btn-danger logout" >Cerrar Sesión</button>
+        </div>
+    </div>
+    <br>
+    <p></p><br><br>
+    <center>
+
+        <div id="hola"   style="width: 48rem;">
+            
+        </div>
+        <div>
+          <input type="text" name="" id="duradura" placeholder="Duracion">
+          <input type="text" name="" id="gengen" placeholder="Genero">
+          <input type="text" name="" id="cancan" placeholder="Cancion">
+          <button class="btn btn-secondary" onclick="publicarRola()">Publicar Cancion</button>
+        </div>
+        <br>
+        <div>
+          <input type="text" name="" id="meees" placeholder="mes">
+          <input type="text" name="" id="dayday" placeholder="dia">
+          <input type="text" name="" id="cancan2" placeholder="Cancion">
+          <button class="btn btn-secondary" onclick="programarRola()">Programar Cancion</button>
+        </div>
+        <br>
+        <br><br><br><br>
+        <div id="graphMusica">
+
+        </div>
+
+    </center>
+</body>
+</div>
+<div style="display: none;" id="vistaPlaylist">
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Proyecto 2 EDD</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page"  onclick="vistaMusica()">Musica</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page"  onclick="vistaPlaylist()">Playlist</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page"  onclick="vistaArtistas()">Artistas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page"  onclick="vistaAmigos()">Amigos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page"  onclick="vistaBloqueados()">Bloqueados</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page"  onclick="vistaPodcast()">Podcast</a>
+          </li>
+          
+          
+          
+        </ul>
+        <span class="navbar-text">
+          Muster Cloud
+        </span>
+      </div>
+    </div>
+</nav>
+  <body>
+    <br><br>
+    <div class="esquinaI">
+        <div >
+                <button onclick="mostraruno()" class="btn btn-danger logout" >Cerrar Sesión</button>
+        </div>
+    </div>
+    <br>
+    <p></p><br><br>
+    <center>
+
+        <div id="vistadetuplay"   style="width: 48rem;">
+            
+        </div>
+        <br><br><br><br><br><br><br>
+        <div id="graphPlaylist">
+
+        </div>
+
+        
+    </center>
+
+    
+</body>
+</div>
+<div style="display: none;" id="vistaArtistas">
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Proyecto 2 EDD</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page"  onclick="vistaMusica()">Musica</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page"  onclick="vistaPlaylist()">Playlist</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page"  onclick="vistaArtistas()">Artistas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page"  onclick="vistaAmigos()">Amigos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page"  onclick="vistaBloqueados()">Bloqueados</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page"  onclick="vistaPodcast()">Podcast</a>
+          </li>
+          
+          
+          
+        </ul>
+        <span class="navbar-text">
+          Muster Cloud
+        </span>
+      </div>
+    </div>
+</nav>
+  <body>
+    <br><br>
+    <div class="esquinaI">
+        <div >
+                <button onclick="mostraruno()" class="btn btn-danger logout" >Cerrar Sesión</button>
+        </div>
+    </div>
+    <br>
+    <p></p><br><br>
+    <h2>Ordenar</h2>
+    <button class="btn btn-caution" onclick="alpha()" style="background-color: rgb(222, 169, 169);">Ascendente</button>
+    <button class="btn btn-caution" onclick="disalpha()" style="background-color: rgb(108, 133, 104)">Descendente</button>
+    <br>
+    <center>
+
+        <div id="musicaxart" style="width: 80%;">
+            
+        </div>
+    </center>
+</body>
+</div>
+<div style="display: none;" id="vistaAmigos">
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Proyecto 2 EDD</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page"  onclick="vistaMusica()">Musica</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page"  onclick="vistaPlaylist()">Playlist</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page"  onclick="vistaArtistas()">Artistas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page"  onclick="vistaAmigos()">Amigos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page"  onclick="vistaBloqueados()">Bloqueados</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page"  onclick="vistaPodcast()">Podcast</a>
+          </li>
+          
+          
+        </ul>
+        <span class="navbar-text">
+          Muster Cloud
+        </span>
+      </div>
+    </div>
+</nav>
+  <body>
+    <br><br>
+    <div class="esquinaI">
+        <div >
+                <button onclick="mostraruno()" class="btn btn-danger logout" >Cerrar Sesión</button>
+        </div>
+    </div>
+    <br>
+    <p></p><br><br>
+    <center>
+
+        <div id="vistadetodos" class="MagisScroll"  style="width: 48rem;">
+            
+        </div>
+        <div id="vistadeamigos" class="MagisScroll"  style="width: 48rem;">
+          
+        </div>
+        <div>
+          <button onclick="deleteFriend()" class="btn btn-primary" >Eliminar Amigo</button>
+        </div>
+
+        <div id="graphAmix">
+
+        </div>
+    </center>
+</body>
+</div>
+<div style="display: none;" id="vistaBloqueados">
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Proyecto 2 EDD</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page"  onclick="vistaMusica()">Musica</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page"  onclick="vistaPlaylist()">Playlist</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page"  onclick="vistaArtistas()">Artistas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page"  onclick="vistaAmigos()">Amigos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page"  onclick="vistaBloqueados()">Bloqueados</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page"  onclick="vistaPodcast()">Podcast</a>
+          </li>
+          
+          
+        </ul>
+        <span class="navbar-text">
+          Muster Cloud
+        </span>
+      </div>
+    </div>
+</nav>
+  <body>
+    <br><br>
+    <div class="esquinaI">
+        <div >
+                <button onclick="mostraruno()" class="btn btn-danger logout" >Cerrar Sesión</button>
+        </div>
+    </div>
+    <br>
+    <p></p><br><br>
+    <center>
+
+        <div id="bloqueox2"   style="width: 48rem;">
+            
+        </div>
+        <div>
+          <button onclick="deleteBlock()" class="btn btn-primary" >Eliminar Bloqueado</button>
+        </div>
+        <br><br><br><br>
+        <div id="graphBloq">
+        </div>
+    </center>
+</body>
+</div>
+<div style="display: none;" id="vistaPodcast">
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Proyecto 2 EDD</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page"  onclick="vistaMusica()">Musica</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page"  onclick="vistaPlaylist()">Playlist</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page"  onclick="vistaArtistas()">Artistas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page"  onclick="vistaAmigos()">Amigos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page"  onclick="vistaBloqueados()">Bloqueados</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page"  onclick="vistaPodcast()">Podcast</a>
+          </li>
+          
+          
+        </ul>
+        <span class="navbar-text">
+          Muster Cloud
+        </span>
+      </div>
+    </div>
+</nav>
+  <body>
+    <br><br>
+    <div class="esquinaI">
+        <div >
+                <button onclick="mostraruno()" class="btn btn-danger logout" >Cerrar Sesión</button>
+        </div>
+        <br>
+    </div>
+    <br>
+    <p></p><br><br>
+
+    <center>
+        <h3>Ordenamiento</h3>
+        <div>
+          <button onclick="orden1()" class="btn btn-secondary">InOrden</button>
+          <button onclick="orden2()" class="btn btn-secondary">PreOrden</button>
+          <button onclick="orden3()" class="btn btn-secondary">PostOrden</button>
+        </div>
+        <br>
+        <div>
+          Nombre
+          <input type="text" name="" id="nombrePod">
+          Tema
+          <input type="text" id="descripcionPod">
+          Duracion
+          <input type="text" id="durapod">
+          Invitados
+          <input type="text" id="invitadospod">
+          <button class="btn btn-secondary" onclick="nuevoPod()">Publicar Podcast</button>
+        </div>
+        <br><br>
+      </center>
+      <center>
+        <br>
+        <br><br><br><p></p>
+
+        <div id="vistadelosPodcast" style="border: 1px solid;">
+          
+        </div>
+      </center>
+</body>
+</div>
+
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://unpkg.com/@hpcc-js/wasm@0.3.11/dist/index.min.js"></script>   
+<script src="https://unpkg.com/d3-graphviz@3.0.5/build/d3-graphviz.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+
+</html>
