@@ -220,7 +220,7 @@
 </body>
 
 </div>
-<div  id="cuatro">
+<div  style="display: none;" id="cuatro">
   <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Proyecto 2 EDD</a>
@@ -272,7 +272,7 @@
                             <div>
                                 <div id="Lienzouno">
 
-                                      <input accept=".json" onchange="cargarClientes(this.files[0])" style="width: 399;" id="fus" name="fus" type="file" class="btn btn-primary btn-sm">
+                                      <input accept=".json" onchange="cargarClientes(this.files[0])" style="width: 399;" id="klientes" type="file" class="btn btn-primary btn-sm">
                                       <button onclick="deselectFile()"  class="btn btn-success">cargar</button>
 
                                 </div>
@@ -289,7 +289,7 @@
                         <td>
                             <div id="lienzoart">
 
-                                    <input accept=".json" onchange="cargarActores(this.files[0])" style="width: 399;" id="far" name="far" type="file" class="btn btn-secondary btn-sm">
+                                    <input accept=".json" onchange="cargarActores(this.files[0])" style="width: 399;" id="aktores" type="file" class="btn btn-secondary btn-sm">
                                     <button  onclick="deselectFile()" class="btn btn-success">cargar</button>
 
                             </div>
@@ -305,7 +305,7 @@
                         <td>
                             <div id="lienzocan">
 
-                                    <input accept=".json" onchange="cargarPeliculas(this.files[0])" style="width: 399;" id="fcan" name="fcan" type="file" class="btn btn-primary btn-sm">
+                                    <input accept=".json" onchange="cargarPeliculas(this.files[0])" style="width: 399;" id="pelikulas" type="file" class="btn btn-primary btn-sm">
                                     <button  class="btn btn-success" onclick="deselectFile()">cargar</button>
 
                             </div>
@@ -322,7 +322,7 @@
                         <td>
                             <div id="lienzomusic">
 
-                                    <input accept=".json" onchange="cargarCategorias(this.files[0])" style="width: 399; text-align: center;" id="fmp" name="fmp" type="file" class="btn btn-secondary btn-sm">
+                                    <input accept=".json" onchange="cargarCategorias(this.files[0])" style="width: 399; text-align: center;" id="kategorias" type="file" class="btn btn-secondary btn-sm">
                                     <button onclick="deselectFile()" class="btn btn-success">cargar</button>
 
                             </div>
@@ -339,7 +339,8 @@
     </center>
     </body>
 </div>
-<div style="display: none;" id="vistaMusica">
+
+<div style="background-color: white;" id="usuario1">
   <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Proyecto 2 EDD</a>
@@ -349,27 +350,18 @@
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page"  onclick="vistaMusica()">Musica</a>
+            <a class="nav-link active" aria-current="page"  onclick="vista1()">Peliculas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " aria-current="page"  onclick="vistaPlaylist()">Playlist</a>
+            <a class="nav-link " aria-current="page"  onclick="vista2()">Categorias</a>
           </li>
           
           <li class="nav-item">
-            <a class="nav-link " aria-current="page"  onclick="vistaArtistas()">Artistas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " aria-current="page"  onclick="vistaAmigos()">Amigos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " aria-current="page"  onclick="vistaBloqueados()">Bloqueados</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " aria-current="page"  onclick="vistaPodcast()">Podcast</a>
+            <a class="nav-link " aria-current="page"  onclick="vista3()">Actores</a>
           </li>
         </ul>
         <span class="navbar-text">
-          Muster Cloud
+          Moviecats
         </span>
       </div>
     </div>
@@ -388,19 +380,9 @@
         <div id="hola"   style="width: 48rem;">
             
         </div>
-        <div>
-          <input type="text" name="" id="duradura" placeholder="Duracion">
-          <input type="text" name="" id="gengen" placeholder="Genero">
-          <input type="text" name="" id="cancan" placeholder="Cancion">
-          <button class="btn btn-secondary" onclick="publicarRola()">Publicar Cancion</button>
-        </div>
+        
         <br>
-        <div>
-          <input type="text" name="" id="meees" placeholder="mes">
-          <input type="text" name="" id="dayday" placeholder="dia">
-          <input type="text" name="" id="cancan2" placeholder="Cancion">
-          <button class="btn btn-secondary" onclick="programarRola()">Programar Cancion</button>
-        </div>
+       
         <br>
         <br><br><br><br>
         <div id="graphMusica">
@@ -410,7 +392,7 @@
     </center>
 </body>
 </div>
-<div style="display: none;" id="vistaPlaylist">
+<div style="background-color: white;" id="usuario2">
   <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Proyecto 2 EDD</a>
@@ -420,30 +402,18 @@
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link " aria-current="page"  onclick="vistaMusica()">Musica</a>
+            <a class="nav-link " aria-current="page"  onclick="vista1()">Peliculas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page"  onclick="vistaPlaylist()">Playlist</a>
+            <a class="nav-link active" aria-current="page"  onclick="vista2()">Categorias</a>
           </li>
           
           <li class="nav-item">
-            <a class="nav-link " aria-current="page"  onclick="vistaArtistas()">Artistas</a>
+            <a class="nav-link " aria-current="page"  onclick="vista3()">Actores</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link " aria-current="page"  onclick="vistaAmigos()">Amigos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " aria-current="page"  onclick="vistaBloqueados()">Bloqueados</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " aria-current="page"  onclick="vistaPodcast()">Podcast</a>
-          </li>
-          
-          
-          
         </ul>
         <span class="navbar-text">
-          Muster Cloud
+          Moviecats
         </span>
       </div>
     </div>
@@ -459,287 +429,93 @@
     <p></p><br><br>
     <center>
 
-        <div id="vistadetuplay"   style="width: 48rem;">
+        <div id="hola"   style="width: 48rem;">
             
         </div>
-        <br><br><br><br><br><br><br>
-        <div id="graphPlaylist">
-
-        </div>
-
         
-    </center>
-
-    
-</body>
-</div>
-<div style="display: none;" id="vistaArtistas">
-  <nav class="navbar navbar-expand-lg bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Proyecto 2 EDD</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link " aria-current="page"  onclick="vistaMusica()">Musica</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " aria-current="page"  onclick="vistaPlaylist()">Playlist</a>
-          </li>
-          
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page"  onclick="vistaArtistas()">Artistas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " aria-current="page"  onclick="vistaAmigos()">Amigos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " aria-current="page"  onclick="vistaBloqueados()">Bloqueados</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " aria-current="page"  onclick="vistaPodcast()">Podcast</a>
-          </li>
-          
-          
-          
-        </ul>
-        <span class="navbar-text">
-          Muster Cloud
-        </span>
-      </div>
-    </div>
-</nav>
-  <body>
-    <br><br>
-    <div class="esquinaI">
-        <div >
-                <button onclick="mostraruno()" class="btn btn-danger logout" >Cerrar Sesión</button>
-        </div>
-    </div>
-    <br>
-    <p></p><br><br>
-    <h2>Ordenar</h2>
-    <button class="btn btn-caution" onclick="alpha()" style="background-color: rgb(222, 169, 169);">Ascendente</button>
-    <button class="btn btn-caution" onclick="disalpha()" style="background-color: rgb(108, 133, 104)">Descendente</button>
-    <br>
-    <center>
-
-        <div id="musicaxart" style="width: 80%;">
-            
-        </div>
-    </center>
-</body>
-</div>
-<div style="display: none;" id="vistaAmigos">
-  <nav class="navbar navbar-expand-lg bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Proyecto 2 EDD</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link " aria-current="page"  onclick="vistaMusica()">Musica</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " aria-current="page"  onclick="vistaPlaylist()">Playlist</a>
-          </li>
-          
-          <li class="nav-item">
-            <a class="nav-link " aria-current="page"  onclick="vistaArtistas()">Artistas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page"  onclick="vistaAmigos()">Amigos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " aria-current="page"  onclick="vistaBloqueados()">Bloqueados</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " aria-current="page"  onclick="vistaPodcast()">Podcast</a>
-          </li>
-          
-          
-        </ul>
-        <span class="navbar-text">
-          Muster Cloud
-        </span>
-      </div>
-    </div>
-</nav>
-  <body>
-    <br><br>
-    <div class="esquinaI">
-        <div >
-                <button onclick="mostraruno()" class="btn btn-danger logout" >Cerrar Sesión</button>
-        </div>
-    </div>
-    <br>
-    <p></p><br><br>
-    <center>
-
-        <div id="vistadetodos" class="MagisScroll"  style="width: 48rem;">
-            
-        </div>
-        <div id="vistadeamigos" class="MagisScroll"  style="width: 48rem;">
-          
-        </div>
-        <div>
-          <button onclick="deleteFriend()" class="btn btn-primary" >Eliminar Amigo</button>
-        </div>
-
-        <div id="graphAmix">
-
-        </div>
-    </center>
-</body>
-</div>
-<div style="display: none;" id="vistaBloqueados">
-  <nav class="navbar navbar-expand-lg bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Proyecto 2 EDD</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link " aria-current="page"  onclick="vistaMusica()">Musica</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " aria-current="page"  onclick="vistaPlaylist()">Playlist</a>
-          </li>
-          
-          <li class="nav-item">
-            <a class="nav-link " aria-current="page"  onclick="vistaArtistas()">Artistas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " aria-current="page"  onclick="vistaAmigos()">Amigos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page"  onclick="vistaBloqueados()">Bloqueados</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " aria-current="page"  onclick="vistaPodcast()">Podcast</a>
-          </li>
-          
-          
-        </ul>
-        <span class="navbar-text">
-          Muster Cloud
-        </span>
-      </div>
-    </div>
-</nav>
-  <body>
-    <br><br>
-    <div class="esquinaI">
-        <div >
-                <button onclick="mostraruno()" class="btn btn-danger logout" >Cerrar Sesión</button>
-        </div>
-    </div>
-    <br>
-    <p></p><br><br>
-    <center>
-
-        <div id="bloqueox2"   style="width: 48rem;">
-            
-        </div>
-        <div>
-          <button onclick="deleteBlock()" class="btn btn-primary" >Eliminar Bloqueado</button>
-        </div>
-        <br><br><br><br>
-        <div id="graphBloq">
-        </div>
-    </center>
-</body>
-</div>
-<div style="display: none;" id="vistaPodcast">
-  <nav class="navbar navbar-expand-lg bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Proyecto 2 EDD</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link " aria-current="page"  onclick="vistaMusica()">Musica</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " aria-current="page"  onclick="vistaPlaylist()">Playlist</a>
-          </li>
-          
-          <li class="nav-item">
-            <a class="nav-link " aria-current="page"  onclick="vistaArtistas()">Artistas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " aria-current="page"  onclick="vistaAmigos()">Amigos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page"  onclick="vistaBloqueados()">Bloqueados</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page"  onclick="vistaPodcast()">Podcast</a>
-          </li>
-          
-          
-        </ul>
-        <span class="navbar-text">
-          Muster Cloud
-        </span>
-      </div>
-    </div>
-</nav>
-  <body>
-    <br><br>
-    <div class="esquinaI">
-        <div >
-                <button onclick="mostraruno()" class="btn btn-danger logout" >Cerrar Sesión</button>
-        </div>
         <br>
+       
+        <br>
+        <br><br><br><br>
+        <div id="graphMusica">
+
+        </div>
+
+    </center>
+</body>
+</div>
+<div style="background-color: white;" id="usuario3">
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Proyecto 2 EDD</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page"  onclick="vista1()">Peliculas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page"  onclick="vista2()">Categorias</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link active " aria-current="page"  onclick="vista3()">Actores</a>
+          </li>
+        </ul>
+        <span class="navbar-text">
+          Moviecats
+        </span>
+      </div>
+    </div>
+</nav>
+  <body>
+    <br><br>
+    <div class="esquinaI">
+        <div >
+                <button onclick="mostraruno()" class="btn btn-danger logout" >Cerrar Sesión</button>
+        </div>
     </div>
     <br>
     <p></p><br><br>
-
     <center>
-        <h3>Ordenamiento</h3>
+      <h3>Ordenamiento</h3>
         <div>
           <button onclick="orden1()" class="btn btn-secondary">InOrden</button>
           <button onclick="orden2()" class="btn btn-secondary">PreOrden</button>
           <button onclick="orden3()" class="btn btn-secondary">PostOrden</button>
         </div>
         <br>
-        <div>
-          Nombre
-          <input type="text" name="" id="nombrePod">
-          Tema
-          <input type="text" id="descripcionPod">
-          Duracion
-          <input type="text" id="durapod">
-          Invitados
-          <input type="text" id="invitadospod">
-          <button class="btn btn-secondary" onclick="nuevoPod()">Publicar Podcast</button>
-        </div>
-        <br><br>
-      </center>
-      <center>
-        <br>
-        <br><br><br><p></p>
+        <div id="viewActores"   style="width: 48rem;">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="..." alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">actor</h5>
+              <p class="card-text">datos actor</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
 
-        <div id="vistadelosPodcast" style="border: 1px solid;">
-          
         </div>
-      </center>
+        
+        <br>
+       
+        <br>
+        <br><br><br><br>
+        <div id="">
+
+        </div>
+
+    </center>
 </body>
 </div>
+
 
 <script src="https://d3js.org/d3.v5.min.js"></script>
 <script src="https://unpkg.com/@hpcc-js/wasm@0.3.11/dist/index.min.js"></script>   
 <script src="https://unpkg.com/d3-graphviz@3.0.5/build/d3-graphviz.js"></script>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<link   href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
 
