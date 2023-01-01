@@ -901,6 +901,28 @@ class TableHash{
             return graph;
         }
     }
+    
+    html(){
+        var html = "<table border=\"1\" cellspacing=\"10\" cellpadding=\"10\" style=\"rounded\" >";
+        html += "<tr>";
+        html += "<td><h2>Index</h2></td>";
+        html += "<td><h2>Value</h2></td>";
+        html += "</tr>";
+        for(let i = 0;i < this.size ; i++){
+            if(!this.table[i].isEmpty()){
+            html += "<tr>";
+            html += "<td>"+i+"</td>";
+            var nodo = this.table[i].head;
+            while(nodo!=null){
+                html += "<td>"+nodo.value+"--->"+nodo.company+"</td>";
+                nodo = nodo.next;
+            }
+            html += "</tr>";
+            }
+        }
+        html += "</table>";
+        return html;
+    }
 
 }
 
@@ -1118,8 +1140,8 @@ let usuarioLog = null;//usuario
 let actores =  new arbolActores();//arbol binario
 let peliculas = new AVL();//arbol AVL
 let categorias = new TableHash(20);//tabla hash
-var alquileres = new Merkle()
-var blockChain = new BlockChain();
+var alquileres = new Merkle()//almacenamiento alk para obtencion de hash y blockchain
+var blockChain = new BlockChain();//blockchain de alquileres
 var periodo = 300000;//5 minutos
 
 
@@ -1230,6 +1252,7 @@ function vista1(){
 
 //mostrar contenedor con vista de artistas
 function vista2(){
+    vw();
     document.getElementById("uno").style.display = "none";
     document.getElementById("dos").style.display = "none";
     document.getElementById("tres").style.display = "none";
@@ -1565,6 +1588,12 @@ function o5(){
     vista1();
 }
 
+function vw(){
+    document.getElementById("catecate").innerHTML = "";
+    var x = categorias.html();
+    document.getElementById("catecate").innerHTML = x;
+}
+
 //funciones de peliculas
 function comentar(id){
     var commit = document.getElementById("comentario").value;
@@ -1588,6 +1617,7 @@ function info(id){
     var x = peliculas.busquedaValor(id);
     vistaPeli();
 }
+
 
 //funciones blockchain
 
