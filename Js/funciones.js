@@ -66,7 +66,9 @@ class listaUsuarios{
             while (temp != null){
                 if(temp.usuario == user && pass == temp.contraseña){
                     if(temp.tipo == tipo){
+                        usuarioLog = temp;
                         return temp;
+
                     }else{
                         return null;
                     }
@@ -460,6 +462,8 @@ class AVL{
         }
     }
 
+    //vistas html
+
     inordenHtml(){
         document.getElementById("vistapelis").innerHTML = "";
         this.inOrdentoHtmlAux(this.raiz);
@@ -481,7 +485,7 @@ class AVL{
             c +=   "</div>";
             c +=   "<div class=\"card-footer\">";
                 c+=("<button class=\"btn btn-primary\" onclick=\"info("+raiz.valor+")\">Informacion</button>");
-                c +=   "<button class=\"btn btn-primary\" onclick=\"alquilar("+raiz.valor+")\">Alquilar</button>";
+                c +=   "<button class=\"btn btn-primary\" onclick=\"alquilar("+raiz.precio+",'"+raiz.name+"')\">Alquilar</button>";
             c +=   "<p class=\"card-text\">"+raiz.valor+"</p>";
             c +=   "</div>";
             c +=   "</div>";
@@ -514,7 +518,7 @@ class AVL{
             c +=   "</div>";
             c +=   "<div class=\"card-footer\">";
                 c+=("<button class=\"btn btn-primary\" onclick=\"info("+raiz.valor+")\">Informacion</button>");
-                c +=   "<button class=\"btn btn-primary\" onclick=\"alquilar("+raiz.valor+")\">Alquilar</button>";
+                 c +=   "<button class=\"btn btn-primary\" onclick=\"alquilar("+raiz.precio+",'"+raiz.name+"')\">Alquilar</button>";
             c +=   "<p class=\"card-text\">"+raiz.valor+"</p>";
             c +=   "</div>";
             c +=   "</div>";
@@ -552,7 +556,7 @@ class AVL{
             c +=   "</div>";
             c +=   "<div class=\"card-footer\">";
                 c+=("<button class=\"btn btn-primary\" onclick=\"info("+raiz.valor+")\">Informacion</button>");
-                c +=   "<button class=\"btn btn-primary\" onclick=\"alquilar("+raiz.valor+")\">Alquilar</button>";
+                 c +=   "<button class=\"btn btn-primary\" onclick=\"alquilar("+raiz.precio+",'"+raiz.name+"')\">Alquilar</button>";
             c +=   "<p class=\"card-text\">"+raiz.valor+"</p>";
             c +=   "</div>";
             c +=   "</div>";
@@ -620,7 +624,7 @@ class AVL{
                 c+=("</div>");
                 c+=("<div class=\"card-footer\">");
                 c+=("<button class=\"btn btn-primary\" onclick=\"info("+raiz.valor+")\">Informacion</button>");
-                c+=("<button class=\"btn btn-primary\" onclick=\"alquilar("+raiz.valor+")\">Alquilar</button>");
+                c +=   "<button class=\"btn btn-primary\" onclick=\"alquilar("+raiz.precio+",'"+raiz.name+"')\">Alquilar</button>";
                 c+=("<p class=\"card-text\">"+raiz.valor+"</p>");
                 c+=("</div>");
                 c+=("</div>");
@@ -733,6 +737,20 @@ class AVL{
             }
         }
     }
+
+
+    busquedaValorAux3(raiz, valor){
+
+        if(raiz!=null){
+            if(raiz.valor == valor){
+                return raiz;
+            }else{
+                this.busquedaValorAux3(raiz.izquierda, valor);
+                this.busquedaValorAux3(raiz.derecha, valor);
+            }
+        }
+    }
+
 
 }
 
@@ -945,9 +963,9 @@ class HashNode {
 class Merkle {
     constructor() {
       this.tophash = null
+      this.tp = "";
       this.size = 0;
-      this.datablock = []
-      this.datablock = []    
+      this.datablock = []   
       this.dot = ''
     }
   
@@ -1001,11 +1019,105 @@ class Merkle {
     }
   
     clear(){
+        console.log(this.tp, "  tp")
         this.tophash = null;
         this.datablock = [];  
         this.size = 0;
+        this.tp = "";
     }
-  }
+
+    dote(){
+        this.dot = ""
+        this.dot = "digraph G {";
+        this.dot += "node [shape=record];\n";
+        this.dot += "rankdir=LR;\n";
+        this.dot += "node [style=filled];\n";
+        this.dot += "node [fillcolor=\"#EEEEEE\"];\n";
+        this.dot += "node [color=\"#EEEEEE\"];\n";
+        this.dot += "edge [color=\"#31CEF0\"];\n";
+        this.dot += "node [fontcolor=\"#31CEF0\"];\n";
+        var p = Math.log2(this.datablock.length)
+        console.log(p, "  p")
+        p = Math.ceil(p);
+        console.log(p, "  p")
+
+        console.log(p, "  p")
+
+        var dados = Math.pow(2,p);
+        console.log(dados, "  dados")
+        for (let i = 0; i < dados; i++) {
+            if(i<this.datablock.length-1){
+                this.dot += "nodo"+i+"[label=\""+this.datablock[i].value+""+this.datablock[i].user+""+this.datablock[i].movie+"\"];\n";
+            }else{
+                this.dot += "nodo"+i+"[label=\" \"];\n";
+            }
+        }
+        var shad = []
+        for (let i = 0; i < dados; i++) {
+            if(i<this.datablock.length-1){
+                var s = this.sha3(this.datablock[i].value, this.datablock[i].user, this.datablock[i].movie);
+                shad.push(s);
+                this.dot += "c"+i+"[label=\""+s+"\"];\nc"+i+"->nodo"+i+";\n";
+            }else{
+                shad.push(this.sha3("nada","",""));
+                this.dot += "c"+i+"[label=\" \"];\nc"+i+"->nodo"+i+";\n";
+            }
+        }
+        var y = dados/2;
+        var uso = 0;
+        var th = []
+        
+        while(y!=0){
+            uso++;
+            var th2 = []
+            for (let i = 0; i < y; i++) {
+                if(uso ==1){
+                    var s = this.sha2(shad[2*i],shad[2*i+1]);
+                    th.push(s);
+                    umpalumpa = s+"";
+                    this.dot += "d"+i+uso+"[label=\""+th[i]+"\"];\n";
+                    this.dot += "d"+i+uso+"->c"+(2*i)+";\n";
+                    this.dot += "d"+i+uso+"->c"+(2*i+1)+";\n";
+                }else{
+                    var s = this.sha2(th[2*i],th[2*i+1])
+                    umpalumpa = s+"";
+                    th2.push(s);
+                    this.dot += "d"+i+uso+"[label=\""+th2[i]+"\"];\n";
+                    this.dot += "d"+i+uso+"->d"+(2*i)+(uso-1)+";\n";
+                    this.dot += "d"+i+uso+"->d"+(2*i+1)+(uso-1)+";\n";
+
+                }
+            }
+            th = th2;
+            if(y==1){
+                this.tp = th2[0];
+                console.log(this.tp, "  tp")
+                break;
+            }
+            y = y/2;
+        }
+
+
+        this.dot += "}";
+        d3.select("#arbolito").graphviz()
+        .width(450)
+        .height(459)
+        .renderDot(this.dot);
+
+
+        console.log(this.dot);
+        return ;
+    }
+
+    sha3(a,b,c){
+        return sha256(a+""+b+""+c+"");
+    }
+    sha2(a,b){
+        return sha256(a+""+b+"");
+    }
+
+
+}
 
 class Bloque{
 	constructor(index,date,data,nonce,prevHash,rootmerkle,hash){
@@ -1035,6 +1147,7 @@ class BlockChain{
     }
 
 	generarBloque(){
+        actualizarumpa();
 		var date = new Date(Date.now());
         date = (date.toLocaleString().replaceAll("/","-"))
         date = (date.toLocaleString().replaceAll(", ","-::"))
@@ -1048,8 +1161,19 @@ class BlockChain{
     //generamos el arbol
 		alquileres.auth()
     //Data revisar
-    var data= alquileres.datablock;
-		var rootmerkle = alquileres.tophash.hash
+        actualizarumpa();
+		var rootmerkle = umpalumpa;
+        if(rootmerkle == undefined || rootmerkle == null || rootmerkle == "" || rootmerkle == "[1,1]"){
+            rootmerkle = alquileres.tp;
+        }
+        if(rootmerkle == undefined || rootmerkle == null || rootmerkle == "" || rootmerkle == "[1,1]"){
+            rootmerkle = JSON.stringify(alquileres.tophash.hash);
+        }
+        if(alquileres.datablock.length == 0 || alquileres.datablock == undefined || alquileres.datablock == null || alquileres.datablock == "" || alquileres.datablock == "[1,1]"){
+            compras = "sin compras"
+        }else{
+            var compras = JSON.stringify(alquileres.datablock);
+        }
         alquileres.clear();
 		var nonce = 0;
 		var hash = "";
@@ -1058,8 +1182,8 @@ class BlockChain{
 		while(!hash.startsWith("00")){	
 			hash = sha256(this.size+date+prevHash+rootmerkle+nonce);
 			nonce += 1;
-		} 
-		var data = new Bloque(this.size, date, data, nonce, prevHash, rootmerkle, hash);
+		}
+		var data = new Bloque(this.size, date, compras, nonce, prevHash, rootmerkle, hash);
 		this.insert(data)
 	}	
 
@@ -1123,14 +1247,42 @@ class BlockChain{
     }
 
     html(){
-        
+        var temporal = this.head;
+        var html = "";
+
+        while(temporal != null){
+            //borde en tabla)
+            html += "<table style=\"border: 1px solid purple; width:40%;\">";
+            html += "<tr><td>Indice</td><td>"+temporal.value.index+"</td></tr>";
+
+            html += "<tr><td>Fecha</td><td>"+temporal.value.date+"</td></tr>";
+            html += "<tr>";
+            html += "<td>Alquileres</td><td>"+temporal.value.data
+            html += "</tr>";
+            html += "<tr>";
+            html += "<td>Nonce</td><td>"+temporal.value.nonce
+            html += "</tr>";
+            html += "<tr>";
+            html += "<td>Prehash</td><td>"+temporal.value.prevHash
+            html += "</tr>";
+            html += "<tr>";
+            html += "<td>RootMerkle</td><td>"+temporal.value.rootmerkle+"</td>"
+            html += "</tr>";
+            html += "<tr>";
+            html += "<td>Hash</td><td>"+temporal.value.hash+"</td>"
+            html += "</tr>";
+            html += "<tr>";
+            html += "</table>";
+            
+            temporal = temporal.next;
+        }
+        document.getElementById("changoview").innerHTML = html;
+        console.log(html);
     }
 
 }
-  
-
-
-
+var index = 0;
+var umpalumpa = "";
 
 
 
@@ -1606,11 +1758,13 @@ function puntuar(id){
 
 }
 
-function alguilar(id){
-    var x = peliculas.busquedaValor2(id);
-    var peli = x.name;
-    var preci = x.precio;
-    var u = usuarioLog.name;
+function alquilar(precio, nombrepeli){
+
+    nombrepeli = nombrepeli.replaceAll("'", " ");
+    var nombre = usuarioLog.nombre;
+    alquileres.add(precio, nombre, nombrepeli);
+
+
 }
 
 function info(id){
@@ -1635,7 +1789,23 @@ function intervalo(){
 }
 
 function generarBloque(){
+    alquileres.dote();
     blockChain.generarBloque();  
       console.log(blockChain)
+    blockChain.html();
 }
 
+function dotMerkle(){
+    alquileres.dote();
+}
+
+function mosstrar(){
+    alquileres.auth()
+    dotMerkle();
+    console.log(alquileres)
+    
+}
+
+function actualizarumpa(){
+    umpalumpa = alquileres.tp;
+}
